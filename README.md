@@ -1,63 +1,126 @@
-Integrantes: 
-Fransisco Barrozo
-Diego Labrín
-Carlos Pradenas
+# Actividad en clase: Caso Palíndromos - Pruebas Unitarias
 
-Actividad en clase: Caso Palíndromos - Pruebas Unitarias
+ **Integrantes:**  
+- Carlos Pradenas
+- Francisco Barrozo
+- Diego Labrin
 
-Paso 1.1:  
-¿Qué hace el método? : el método verifica si una palabra es
-un palindromo
+---
 
-¿Cómo lo hace? : primero crea una cadena vacía llamada resultado,
-luego llena esta variable primero llamando la cadena, posteriormente
-ocupando el método split que logra dividir los caracteres en un arreglo,
-luego ocupa el método reverse para invertir el arreglo, y usa el método join para unirlo
-nuevamente. Finalmente compara la cadena con el resultado retornando un booleano.
+## Paso 1: Leer y entender el contexto problema
 
-¿Cómo lo uso? : para usarlo se debe asignar la palabra que se quiere comparar a una constante.
+### Discusión y Conclusión:
 
-Ejemplo:
+- **¿Qué hace el método?**
+  El método `esPalindromo` verifica si una cadena de texto dada es un palíndromo, es decir, si se lee igual de izquierda a derecha y de derecha a izquierda.
 
-const palindromo1 = "oso";
+- **¿Cómo lo hace?**
+  Divide la cadena en un array de caracteres, invierte ese array y luego lo une nuevamente en una cadena. Luego, compara la cadena original con la cadena invertida.
 
-console.log(esPalindromo(palindromo1));
+- **¿Cómo lo uso?**
+  Llama a la función `esPalindromo` pasando como argumento la cadena que deseas verificar.
 
-Paso 2:  
-En el main
+## Paso 2: Entender el método JavaScript
 
-Paso 3.2:
-Probaremos una palabra normal que sea palíndromo
-una palabra que no sea palíndromo,
-un frase palíndromo,
-una palabra con numeros,
-un texto vacío,
-un texto con solo espacio
+### 2.1 Explicación individual y grupal
 
-Paso 3.4: 
-Probado el test con aca, acas, h, los test arrojan un resultado
-positivo, demostrando que el código para verificar palindromos funciona
+### 2.2 Construir versión Java equivalente
 
-Paso 4.1:
-Con el numero 200 deberia ser NO PALINDROMO.
+Código Java equivalente:
+```java
+public static boolean esPalindromo(String cadena) {
+        StringBuilder palabra_invertida = new StringBuilder();
 
-Con una cadena vacía la debería tomar como PALINDROMO.
+        // Divide la cadena en un arreglo de caracteres
+        char[] caracteres = cadena.toCharArray();
 
-Con "aaabccbaaa" la debería tomar como PALINDROMO.
+        // Invierte el arreglo de caracteres
+        for (int i = caracteres.length - 1; i >= 0; i--) {
+            palabra_invertida.append(caracteres[i]);
+        }
+        String palabra = palabra_invertida.toString();
 
-Con "ahabccbaaa" la deberia tomar como NO PALINDROMO.
+        // Comparar la cadena original con la cadena invertida
+        return cadena.equals(palabra);
+```
 
-Con "La tele letal" deberia tomarla como NO PALINDROMO, ya que
-no está implementada la lógica que saque los espacios de la frase.
+### 2.3 Discutir resultados entre el grupo y con el profesor
 
-Paso 4.2:
+## Paso 3: Diseñar y ejecutar pruebas unitarias
 
-Se mejoró el código.
+### 3.1 Diseñar un plan de pruebas
 
-¿Qué consideraciones tomaron en cuenta? R: Que las frases pudieran
-considerarse como palindromos.
+Para diseñar un plan de pruebas, en el caso de la verificación de palíndromos, podríamos incluir los siguientes tipos de pruebas:
 
-¿Qué mejoró en su método? R: El reemplazo de los " " por "".
+1. **Caso de prueba con un palíndromo corto:**
+  - Input: "radar"
+  - Output esperado: True
 
-¿Qué rol jugaron las pruebas en mejorar su código? R: Ir probando si se detectaban
-las frases como palíndromos.
+2. **Caso de prueba con una cadena no palíndroma:**
+  - Input: "hello"
+  - Output esperado: False
+
+3. **Caso de prueba con una cadena vacía:**
+  - Input: ""
+  - Output esperado: True (ya que una cadena vacía se considera un palíndromo)
+
+4. **Caso de prueba con una cadena que contiene espacios:**
+  - Input: "Anita lava la tina"
+  - Output esperado: True
+
+5. **Caso de prueba con un número entero:**
+  - Input: "12321"
+  - Output esperado: True
+
+6. **Caso de prueba con un solo carácter:**
+- Input: "h"
+- Output esperado: True
+
+### 3.2 Diseñar casos de prueba unitaria
+
+A partir del plan de pruebas, podemos diseñar los casos de prueba unitaria utilizando la librería Java para test unitarios JUnit. 
+
+### 3.3 Implementar pruebas unitarias en Java usando JUnit
+
+En grupo se escribe y ejecuta pruebas unitarias en Java utilizando el framework JUnit.
+
+## Paso 4: Mejorar el método y diseñar nuevas pruebas
+
+### 4.1 Discutir casos de prueba adicionales
+ A partir de las pruebas unitarias, todos los casos pasaron las pruebas excepto el cuarto caso:
+4. **Caso de prueba con una cadena que contiene espacios:**
+- Input: "Anita lava la tina"
+- Output esperado: True
+
+### 4.2 Construir versión mejorada del método
+
+A partir de los casos de prueba se mejoró el código:
+
+```java
+    public static boolean esPalindromoMejorado(String cadena) {
+        // Eliminar caracteres especiales y convertir a minúsculas
+        String cadenaLimpia = cadena.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        // Crear una cadena invertida
+        StringBuilder palabraInvertida = new StringBuilder(cadenaLimpia).reverse();
+
+        // Comparar la cadena original con la cadena invertida
+        return cadenaLimpia.equals(palabraInvertida.toString());
+        }
+```
+Se tomó en cuenta la validación de carácteres especiales y insensibilización a mayúsculas.  
+A demás, se usó el método `reverse()` intergrado en java en vez de invertir la cadena manualmente
+
+### 4.3 Diseñar nuevas pruebas unitarias
+
+## Paso 5: Discutir experiencia y resultados
+
+
+Con base en nuestros resultados en esta actividad, 
+que proporciona una oportunidad práctica para que los estudiantes trabajen en el proceso de desarrollo de software, 
+desde la comprensión del código existente hasta la mejora y la prueba. 
+Además, la importancia de las pruebas unitarias es bastante util para fortalecer el código de errores que suelen pasar desapercibidos si no se toman en cuenta estas pruebas.  
+---
+![Test de pruebas exitoso](https://github.com/Carletess/Evidencia03-CasoPalindromos/blob/8950b590adbd362256ec13eafb89920b03ae19d2/src/main/resources/PassedTest.png)
+
+![Espacio de trabajo](https://github.com/Carletess/Evidencia03-CasoPalindromos/blob/8950b590adbd362256ec13eafb89920b03ae19d2/src/main/resources/Workspace.png)
