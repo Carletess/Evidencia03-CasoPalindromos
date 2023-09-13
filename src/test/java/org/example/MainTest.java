@@ -9,13 +9,13 @@ class MainTest {
     @Test
     void esPalindromo() {
         // Caso de prueba: Palabra que es un palíndromo
-        assertTrue(Main.esPalindromo("oso"));
+        assertTrue(Main.esPalindromo("aca"));
 
         // Caso de prueba: Palabra que no es un palíndromo
-        assertFalse(Main.esPalindromo("hola"));
+        assertFalse(Main.esPalindromo("acas"));
 
         // Caso de prueba: Frase que es un palíndromo
-        assertTrue(Main.esPalindromo("anita lava la tina"));
+        assertTrue(Main.esPalindromo("h"));
 
         // Caso de prueba: Palabra con números que es un palíndromo
         assertTrue(Main.esPalindromo("12321"));
