@@ -113,11 +113,15 @@ A demás, se usó el método `reverse()` intergrado en java en vez de invertir l
 
 ### 4.3 Diseñar nuevas pruebas unitarias
 
-Los grupos deben crear nuevas pruebas unitarias que cubran los casos de prueba adicionales y verificar sus resultados teóricos con los resultados empíricos.
-
 ## Paso 5: Discutir experiencia y resultados
+
+
+![Test de pruebas exitoso](https://github.com/Carletess/Evidencia03-CasoPalindromos/blob/8950b590adbd362256ec13eafb89920b03ae19d2/src/main/resources/PassedTest.png)
 
 Con base en nuestros resultados en esta actividad, 
 que proporciona una oportunidad práctica para que los estudiantes trabajen en el proceso de desarrollo de software, 
 desde la comprensión del código existente hasta la mejora y la prueba. 
 Además, la importancia de las pruebas unitarias es bastante util para fortalecer el código de errores que suelen pasar desapercibidos si no se toman en cuenta estas pruebas.
+
+
+![Espacio de trabajo](https://github.com/Carletess/Evidencia03-CasoPalindromos/blob/8950b590adbd362256ec13eafb89920b03ae19d2/src/main/resources/Workspace.png)
