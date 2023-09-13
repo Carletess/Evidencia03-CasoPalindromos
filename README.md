@@ -26,8 +26,7 @@
 
 ### 2.2 Construir versión Java equivalente
 
-Los grupos deben trabajar juntos para crear una versión Java equivalente del método. Aquí tienes un ejemplo de código Java equivalente:
-
+Código Java equivalente:
 ```java
 public static boolean esPalindromo(String cadena) {
         StringBuilder palabra_invertida = new StringBuilder();
