@@ -44,3 +44,15 @@ Con "ahabccbaaa" la deberia tomar como NO PALINDROMO.
 
 Con "La tele letal" deberia tomarla como NO PALINDROMO, ya que
 no está implementada la lógica que saque los espacios de la frase.
+
+Paso 4.2:
+
+Se mejoró el código.
+
+¿Qué consideraciones tomaron en cuenta? R: Que las frases pudieran
+considerarse como palindromos.
+
+¿Qué mejoró en su método? R: El reemplazo de los " " por "".
+
+¿Qué rol jugaron las pruebas en mejorar su código? R: Ir probando si se detectaban
+las frases como palíndromos.

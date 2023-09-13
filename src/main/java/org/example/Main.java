@@ -1,20 +1,13 @@
 package org.example;
 public class Main {
 
-    public static boolean esPalindromo(String cadena) {
-        StringBuilder palabra_invertida = new StringBuilder();
+    public static boolean esPalindromo(String palabraIngresada) {
+        palabraIngresada = palabraIngresada.replace(" ", "");
 
-        // Dividir la cadena en un arreglo de caracteres
-        char[] caracteres = cadena.toCharArray();
+        StringBuilder stringBuilder = new StringBuilder(palabraIngresada);
+        String palabraInvertida = stringBuilder.reverse().toString();
 
-        // Invertir el arreglo de caracteres
-        for (int i = caracteres.length - 1; i >= 0; i--) {
-            palabra_invertida.append(caracteres[i]);
-        }
-        String palabra = palabra_invertida.toString();
-
-        // Comparar la cadena original con la cadena invertida
-        return cadena.equals(palabra);
+        return palabraIngresada.equalsIgnoreCase(palabraInvertida);
     }
     public static void main(String[] args) {
         String ejemplo1 = "oso";

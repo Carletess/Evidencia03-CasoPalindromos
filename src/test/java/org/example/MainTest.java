@@ -15,7 +15,7 @@ class MainTest {
         assertFalse(Main.esPalindromo("acas"));
 
         // Caso de prueba: Frase que es un palíndromo
-        assertTrue(Main.esPalindromo("h"));
+        assertTrue(Main.esPalindromo("la tele letal"));
 
         // Caso de prueba: Palabra con números que es un palíndromo
         assertTrue(Main.esPalindromo("12321"));
