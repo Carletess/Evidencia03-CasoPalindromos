@@ -30,3 +30,17 @@ un texto vacío,
 un texto con solo espacio
 
 Paso 3.4: 
+Probado el test con aca, acas, h, los test arrojan un resultado
+positivo, demostrando que el código para verificar palindromos funciona
+
+Paso 4.1:
+Con el numero 200 deberia ser NO PALINDROMO.
+
+Con una cadena vacía la debería tomar como PALINDROMO.
+
+Con "aaabccbaaa" la debería tomar como PALINDROMO.
+
+Con "ahabccbaaa" la deberia tomar como NO PALINDROMO.
+
+Con "La tele letal" deberia tomarla como NO PALINDROMO, ya que
+no está implementada la lógica que saque los espacios de la frase.
